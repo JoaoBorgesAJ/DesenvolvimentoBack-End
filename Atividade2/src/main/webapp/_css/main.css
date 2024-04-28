@@ -1,0 +1,57 @@
+/*main.css*/
+/*Estilo para o rótulo do campo
+label{
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+/*Estilo para o campo de entrada de texto*
+input[type="text"] {
+	width: 300px;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	font-size: 16px;
+} */
+/*
+input[type="submit"] {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: nome;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+} */
+
+.caixa {
+	display: nome;
+	position: fixed;
+	top: 50%;
+	left 50;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border: 2px; solid-black;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.caixa p{
+	margin: 0;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button:hover {
+    background-color: #0069d9;
+}
