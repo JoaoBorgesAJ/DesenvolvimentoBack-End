@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>FORM</title>
+	<link rel="stylesheet" type="text/css" href="recources/css/main.css" />
+	<style>
+		.container {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.display,
+		.interacao {
+			background-color: #f0f0f0;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		button {
+			pading: 10px 20px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="script.js"></script>
+
+	<h2>Registration Form</h2>
+	<h:form>
+		<div class=container>
+			<div class="display">
+				<h2>Information Display</h2>
+				<p id="info"> Click the button below to view information.</p>
+				<buttona onclick="displayInformation()">Display</button>
+
+			</div>
+			<div class="interaction">
+				<h2>Data Input</h2>
+				<h:outputLabel for="name">Name:</h:outputLabel>
+				<input type="text" id="name" placeholder="First Name">
+				<br />
+
+				<h:outputLabel for="lastName">LastName</h:outputLabel>
+				<input type="text" id="lastName" placeholder="Last Name">
+				<br />
+
+				<h:outputLabel for="phoneNumber">PhoneNumber</h:outputLabel>
+				<input type="text" id="phoneNumber" placeholder="(xx) xxxxx-xxxx" oninput="validateNumber(this)">
+				<br />
+
+				<h:outputLabel for="email">Email:</h:outputLabel>
+				<input type="text" id="email" placeholder="Email@email.com">
+				<br />
+
+				<h:commandButton value="Send" action="#{seuBean.send}" />
+				<button onclick="processInput()"> Send</button>
+			</div>
+		</div>
+	</h:form>
+
+	<script>
+		function displayInformation() {
+			var infoElement = document.getElementById("info");
+			infoElement.textContent = "This is the information displayed after clicking the button"
+		}
+
+		function processInput() {
+			var name = document.getElementById("name").value;
+			var lastName = document.getElementById("lastName").value;
+			var phoneNumber = document.getElementById("phoneNumber").value;
+			var email = document.getElementById("email").value;
+
+			// Aqui você pode processar os dados inseridos pelo usuário, como enviá-los para um servidor, etc.
+
+			alert("Name" + name + "\nLastName: " + lastName + "\nPhoneNumber" + phoneNumber + "\nEmail" + email);
+
+		}
+
+		function validateNumber(input) {
+			input.value = input.value.replace(/[^\d]/g, '');
+		}
+	</script>
+
+</body>
+
+</html>
