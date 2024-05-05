@@ -1,0 +1,27 @@
+Modelo Entidade-Relacionamento (DER) para Sistema de Biblioteca
+
+Entidades:
+Aluno
+- ra (PK)
+- nome
+- email
+- telefone
+
+Livro
+- isbn (PK)
+- nome
+- autor
+- paginas
+
+Colaborador
+- cpf (PK)
+- nome
+- email
+- cargo
+
+Empréstimo
+- id (PK)
+- dataEmprestimo
+- dataDevolucao
+- livroIsbn (FK referenciando Livro)
+- colaboradorCpf (FK referenciando Colaborador)
